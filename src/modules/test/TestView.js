@@ -1,29 +1,31 @@
 import React, {PropTypes, Component} from 'react';
 import {
-  Button,
+  Text,
   View,
   StyleSheet
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const color = () => Math.floor(255 * Math.random());
-
 /**
  * Sample view to demonstrate StackNavigator
  * @TODO remove this module in a live application.
  */
-class ColorView extends Component {
-  static displayName = 'ColorView';
+class TestView extends Component {
+  static displayName = 'TestView';
+
+  // static navigationOptions = ({ navigation, screenProps }) => ({
+  //   title: navigation.state.params.name + "'s Profile!",
+  //   headerRight: <Button color={screenProps.tintColor} {...} />,
+  // });
 
   static navigationOptions = {
-    title: 'Colors!',
+    title: 'Test',
     tabBar: () => ({
       icon: (props) => (
         <Icon name='color-lens' size={24} color={props.tintColor} />
       )
     }),
-    // TODO: move this into global config?
     header: {
       tintColor: 'white',
       style: {
@@ -36,22 +38,19 @@ class ColorView extends Component {
     navigate: PropTypes.func.isRequired
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      background: `rgba(${color()},${color()},${color()}, 1)`
-    };
+  componentDidMount() {
+    console.log('TestView componentDidMount')
   }
 
-  open = () => {
-    this.props.navigate({routeName: 'Test'});
-  };
+  componentWillUnmount() {
+    console.log('TestView componentWillUnmount')
+  }
 
   render() {
     const buttonText = 'Open in Stack Navigator';
     return (
-      <View style={[styles.container, {backgroundColor: this.state.background}]}>
-        <Button color='#ee7f06' title={buttonText} onPress={this.open}/>
+      <View style={styles.container}>
+        <Text>Test!</Text>
       </View>
     );
   }
@@ -65,4 +64,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ColorView;
+export default TestView;

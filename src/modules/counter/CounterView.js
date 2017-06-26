@@ -34,6 +34,14 @@ class CounterView extends Component {
     navigate: PropTypes.func.isRequired
   };
 
+  componentDidMount() {
+    console.log('CounterView componentDidMount')
+  };
+
+  componentWillUnmount() {
+    console.log('CounterView componentWillUnmount')
+  };
+
   increment = () => {
     this.props.counterStateActions.increment();
   };
@@ -47,8 +55,12 @@ class CounterView extends Component {
   };
 
   bored = () => {
-    this.props.navigate({routeName: 'Color'});
+    this.props.navigate({routeName: 'ColorNav'});
   };
+
+  goToTest = () => {
+    this.props.navigate({routeName: 'Test'});
+  }
 
   renderUserInfo = () => {
     if (!this.props.userName) {
@@ -113,6 +125,12 @@ class CounterView extends Component {
         <TouchableOpacity onPress={this.bored} accessible={true}>
           <Text style={styles.linkButton}>
             {'I\'m bored!'}
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={this.goToTest} accessible={true}>
+          <Text style={styles.linkButton}>
+            {'Test'}
           </Text>
         </TouchableOpacity>
 
