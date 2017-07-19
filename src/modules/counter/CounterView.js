@@ -10,16 +10,16 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 class CounterView extends Component {
-  static displayName = 'CounterView';
+  // static displayName = 'CounterView';
 
-  static navigationOptions = {
-    title: 'Counter',
-    tabBar: () => ({
-      icon: (props) => (
-        <Icon name='plus-one' size={24} color={props.tintColor} />
-      )
-    })
-  }
+  // static navigationOptions = {
+  //   title: 'Counter',
+  //   // tabBar: () => ({
+  //   //   icon: (props) => (
+  //   //     <Icon name='plus-one' size={24} color={props.tintColor} />
+  //   //   )
+  //   // })
+  // }
 
   static propTypes = {
     counter: PropTypes.number.isRequired,

@@ -12,27 +12,17 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
  * @TODO remove this module in a live application.
  */
 class TestView extends Component {
-  static displayName = 'TestView';
+  // static displayName = 'TestView';
 
-  // static navigationOptions = ({ navigation, screenProps }) => ({
-  //   title: navigation.state.params.name + "'s Profile!",
-  //   headerRight: <Button color={screenProps.tintColor} {...} />,
-  // });
-
-  static navigationOptions = {
-    title: 'Test',
-    tabBar: () => ({
-      icon: (props) => (
-        <Icon name='color-lens' size={24} color={props.tintColor} />
-      )
-    }),
-    header: {
-      tintColor: 'white',
-      style: {
-        backgroundColor: '#39babd'
-      }
-    }
-  }
+  // static navigationOptions = {
+  //   title: 'Test',
+  //   header: {
+  //     tintColor: 'white',
+  //     style: {
+  //       backgroundColor: '#39babd'
+  //     }
+  //   }
+  // }
 
   static propTypes = {
     navigate: PropTypes.func.isRequired
